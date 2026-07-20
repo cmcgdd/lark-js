@@ -1,0 +1,10 @@
+@lark-sh/client
+Copyright 2025 Bag of Holding, Inc.
+
+This product includes software developed by Google LLC.
+
+Portions of the test suite (src/__tests__/integration-firebase-compat*.test.ts)
+are derived from the Firebase JavaScript SDK:
+https://github.com/firebase/firebase-js-sdk
+Copyright 2017 Google LLC
+Licensed under the Apache License, Version 2.0

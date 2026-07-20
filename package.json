@@ -1,0 +1,52 @@
+{
+  "name": "@lark-sh/client",
+  "version": "0.1.29",
+  "description": "JavaScript client for Lark real-time database",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./fb-v8": {
+      "types": "./dist/fb-v8/index.d.ts",
+      "import": "./dist/fb-v8/index.mjs",
+      "require": "./dist/fb-v8/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest --exclude 'src/__tests__/integration*.test.ts'",
+    "test:run": "vitest run --exclude 'src/__tests__/integration*.test.ts'",
+    "test:integration": "vitest run src/__tests__/integration*.test.ts --exclude 'src/__tests__/integration-firebase-compat*.test.ts' --no-file-parallelism",
+    "test:fbcompat": "vitest run src/__tests__/integration-firebase-compat*.test.ts --no-file-parallelism",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "realtime",
+    "database",
+    "firebase",
+    "websocket",
+    "sync"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/ws": "^8.18.1",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^2.0.0"
+  },
+  "dependencies": {
+    "canonicalize": "^2.1.0",
+    "ws": "^8.18.3"
+  }
+}
